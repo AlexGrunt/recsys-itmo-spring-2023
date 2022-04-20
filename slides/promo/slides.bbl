@@ -1,0 +1,21 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{RRSK10}
+
+\bibitem[RRSK10]{RSHB}
+Francesco Ricci, Lior Rokach, Bracha Shapira, and Paul~B. Kantor,
+  \emph{Recommender systems handbook}, 1st ed., Springer-Verlag, Berlin,
+  Heidelberg, 2010.
+
+\bibitem[SBE{\etalchar{+}}21]{NETFLIX}
+Harald Steck, Linas Baltrunas, Ehtsham Elahi, Dawen Liang, Yves Raimond, and
+  Justin Basilico, \emph{Deep learning for recommender systems: A netflix case
+  study}, AI Magazine \textbf{42} (2021), no.~3, 7--18.
+
+\end{thebibliography}

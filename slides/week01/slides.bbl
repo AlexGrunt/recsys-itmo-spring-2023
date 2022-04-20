@@ -1,0 +1,40 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{NET21}
+
+\bibitem[CAS16]{YTBE}
+Paul Covington, Jay Adams, and Emre Sargin, \emph{Deep neural networks for
+  youtube recommendations}, Proceedings of the 10th ACM Conference on
+  Recommender Systems (New York, NY, USA), RecSys '16, Association for
+  Computing Machinery, 2016, p.~191–198.
+
+\bibitem[GH07]{GELMAN}
+Andrew Gelman and Jennifer Hill, \emph{Data analysis using regression and
+  multilevel/hierarchical models}, vol. Analytical methods for social research,
+  Cambridge University Press, New York, 2007.
+
+\bibitem[JIH16]{MNDL}
+Kris Jack, Ed~Ingold, and Maya Hristakeva, \emph{Mendeley suggest
+  architecture}, Oct 2016.
+
+\bibitem[NET21]{NETFLIXAB}
+\emph{Decision making at netflix (series)}, Sep 2021.
+
+\bibitem[NN13]{NFLX}
+Xavier~Amatriain Netflix and Justin~Basilico Netflix, \emph{System
+  architectures for personalization and recommendation}, Mar 2013.
+
+\bibitem[Spo16]{SPTF}
+GALVANIZE Spotify, \emph{Ever wonder how spotify discover weekly works? data
+  science}, Aug 2016.
+
+\bibitem[Wan20]{TIK}
+Catherine Wang, \emph{Why tiktok made its user so obsessive? the ai algorithm
+  that got you hooked.}, Jun 2020.
+
+\end{thebibliography}

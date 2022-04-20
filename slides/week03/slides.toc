@@ -1,0 +1,5 @@
+\babel@toc {russian}{}
+\beamer@sectionintoc {1}{Content-based RS}{4}{0}{1}
+\beamer@sectionintoc {2}{Neighbourhood-based Collaborative Filtering}{18}{0}{2}
+\beamer@sectionintoc {3}{Model-based Collaborative Filtering}{27}{0}{3}
+\beamer@sectionintoc {4}{\IeC {\CYRI }\IeC {\cyrt }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyri }}{42}{0}{4}

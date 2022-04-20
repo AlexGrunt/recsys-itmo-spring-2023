@@ -1,0 +1,36 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{DAEH{\etalchar{+}}15}
+
+\bibitem[BAN19a]{BANDITS3}
+\emph{13 solutions to multi-arm bandit problem for non-mathematicians}, 2019.
+
+\bibitem[BAN19b]{BANDITS1}
+\emph{Multi-armed bandits and reinforcement learning}, 2019.
+
+\bibitem[BAN19c]{BANDITS2}
+\emph{Multi-armed bandits and reinforcement learning 2}, 2019.
+
+\bibitem[CBC{\etalchar{+}}18]{TOPK}
+Minmin Chen, Alex Beutel, Paul Covington, Sagar Jain, Francois Belletti, and
+  Ed~H. Chi, \emph{Top-k off-policy correction for a {REINFORCE} recommender
+  system}, CoRR \textbf{abs/1812.02353} (2018).
+
+\bibitem[DAEH{\etalchar{+}}15]{DDPG}
+Gabriel Dulac-Arnold, Richard Evans, H.~V. Hasselt, Peter Sunehag, Timothy~P.
+  Lillicrap, Jonathan~J. Hunt, Timothy~A. Mann, Th{\'e}ophane Weber, Thomas
+  Degris, and Ben Coppin, \emph{Deep reinforcement learning in large discrete
+  action spaces}, arXiv: Artificial Intelligence (2015).
+
+\bibitem[IHM{\etalchar{+}}19]{RECSIM}
+Eugene Ie, Chih-wei Hsu, Martin Mladenov, Vihan Jain, Sanmit Narvekar, Jing
+  Wang, Rui Wu, and Craig Boutilier, \emph{Recsim: A configurable simulation
+  platform for recommender systems}, 2019, cite arxiv:1909.04847.
+
+\end{thebibliography}

@@ -1,0 +1,105 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{XLW{\etalchar{+}}20}
+
+\bibitem[BKYK19]{CB2CF}
+Oren Barkan, Noam Koenigstein, Eylon Yogev, and Ori Katz, \emph{Cb2cf: A neural
+  multiview content-to-collaborative filtering model for completely cold item
+  recommendations}, Proceedings of the 13th ACM Conference on Recommender
+  Systems (New York, NY, USA), RecSys '19, Association for Computing Machinery,
+  2019, p.~228–236.
+
+\bibitem[CAS16]{YTBE}
+Paul Covington, Jay Adams, and Emre Sargin, \emph{Deep neural networks for
+  youtube recommendations}, Proceedings of the 10th ACM Conference on
+  Recommender Systems (New York, NY, USA), RecSys '16, Association for
+  Computing Machinery, 2016, p.~191–198.
+
+\bibitem[Che16]{WD}
+Heng-Tze Cheng, \emph{Wide and deep learning: Better together with tensorflow},
+  Jun 2016.
+
+\bibitem[DCJ19]{PROGRESS}
+Maurizio~Ferrari Dacrema, Paolo Cremonesi, and Dietmar Jannach, \emph{Are we
+  really making much progress? a worrying analysis of recent neural
+  recommendation approaches}, Proceedings of the 13th ACM Conference on
+  Recommender Systems (New York, NY, USA), RecSys '19, Association for
+  Computing Machinery, 2019, p.~101–109.
+
+\bibitem[DZH21]{DALMANN}
+Alexander Dallmann, Daniel Zoller, and Andreas Hotho, \emph{A case study on
+  sampling strategies for evaluating neural sequential item recommendation
+  models}, Fifteenth ACM Conference on Recommender Systems (New York, NY, USA),
+  RecSys '21, Association for Computing Machinery, 2021, p.~505–514.
+
+\bibitem[HAR{\etalchar{+}}19]{AIRBNB}
+Malay Haldar, Mustafa Abdool, Prashant Ramanathan, Tao Xu, Shulin Yang,
+  Huizhong Duan, Qing Zhang, Nick Barrow-Williams, Bradley~C. Turnbull,
+  Brendan~M. Collins, and Thomas Legrand, \emph{Applying deep learning to
+  airbnb search}, Proceedings of the 25th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining (New York, NY, USA), KDD '19,
+  Association for Computing Machinery, 2019, p.~1927–1935.
+
+\bibitem[HHG{\etalchar{+}}13]{DSSM}
+Po-Sen Huang, Xiaodong He, Jianfeng Gao, Li~Deng, Alex Acero, and Larry Heck,
+  \emph{Learning deep structured semantic models for web search using
+  clickthrough data}, Proceedings of the 22nd ACM International Conference on
+  Information and Knowledge Management (New York, NY, USA), CIKM '13,
+  Association for Computing Machinery, 2013, p.~2333–2338.
+
+\bibitem[HLZ{\etalchar{+}}17]{NCF}
+Xiangnan He, Lizi Liao, Hanwang Zhang, Liqiang Nie, Xia Hu, and Tat-Seng Chua,
+  \emph{Neural collaborative filtering}, Proceedings of the 26th International
+  Conference on World Wide Web (Republic and Canton of Geneva, CHE), WWW '17,
+  International World Wide Web Conferences Steering Committee, 2017,
+  p.~173–182.
+
+\bibitem[NK11]{SLIM}
+Xia Ning and George Karypis, \emph{Slim: Sparse linear methods for top-n
+  recommender systems.}, ICDM (Diane~J. Cook, Jian Pei, Wei Wang, Osmar~R.
+  Zaïane, and Xindong Wu, eds.), IEEE Computer Society, 2011, pp.~497--506.
+
+\bibitem[SLW{\etalchar{+}}19]{BERT4Rec}
+Fei Sun, Jun Liu, Jian Wu, Changhua Pei, Xiao Lin, Wenwu Ou, and Peng Jiang,
+  \emph{Bert4rec: Sequential recommendation with bidirectional encoder
+  representations from transformer}, Proceedings of the 28th ACM International
+  Conference on Information and Knowledge Management (New York, NY, USA), CIKM
+  '19, ACM, 2019, pp.~1441--1450.
+
+\bibitem[Ste19]{EASE}
+Harald Steck, \emph{Embarrassingly shallow autoencoders for sparse data}, The
+  World Wide Web Conference (New York, NY, USA), WWW '19, Association for
+  Computing Machinery, 2019, p.~3251–3257.
+
+\bibitem[WSC{\etalchar{+}}21]{DCN}
+Ruoxi Wang, Rakesh Shivanna, Derek Cheng, Sagar Jain, Dong Lin, Lichan Hong,
+  and Ed~Chi, \emph{Dcn v2: Improved deep and cross network and practical
+  lessons for web-scale learning to rank systems}, Proceedings of the Web
+  Conference 2021 (New York, NY, USA), WWW '21, Association for Computing
+  Machinery, 2021, p.~1785–1797.
+
+\bibitem[XLW{\etalchar{+}}20]{DFN}
+Ruobing Xie, Chen Ling, Yalong Wang, Rui Wang, Feng Xia, and Leyu Lin,
+  \emph{Deep feedback network for recommendation}, IJCAI, 2020.
+
+\bibitem[YHC{\etalchar{+}}18]{PINSAGE}
+Rex Ying, Ruining He, Kaifeng Chen, Pong Eksombatchai, William~L. Hamilton, and
+  Jure Leskovec, \emph{Graph convolutional neural networks for web-scale
+  recommender systems}, Proceedings of the 24th ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining (New York, NY, USA), KDD
+  '18, Association for Computing Machinery, 2018, p.~974–983.
+
+\bibitem[ZHW{\etalchar{+}}19]{RANKING}
+Zhe Zhao, Lichan Hong, Li~Wei, Jilin Chen, Aniruddh Nath, Shawn Andrews, Aditee
+  Kumthekar, Maheswaran Sathiamoorthy, Xinyang Yi, and Ed~Chi,
+  \emph{Recommending what video to watch next: A multitask ranking system},
+  Proceedings of the 13th ACM Conference on Recommender Systems (New York, NY,
+  USA), RecSys '19, Association for Computing Machinery, 2019, p.~43–51.
+
+\end{thebibliography}

@@ -1,0 +1,60 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{WLCB18}
+
+\bibitem[AHR{\etalchar{+}}20]{AIRBNB}
+Mustafa Abdool, Malay Haldar, Prashant Ramanathan, Tyler Sax, Lanbo Zhang,
+  Aamir Manaswala, Lynn Yang, Bradley Turnbull, Qing Zhang, and Thomas Legrand,
+  \emph{Managing diversity in airbnb search}, Proceedings of the 26th ACM
+  SIGKDD International Conference on Knowledge Discovery and Data Mining (New
+  York, NY, USA), KDD '20, Association for Computing Machinery, 2020,
+  p.~2952–2960.
+
+\bibitem[CZZ{\etalchar{+}}20]{ALIBABA}
+Yukuo Cen, Jianwei Zhang, Xu~Zou, Chang Zhou, Hongxia Yang, and Jie Tang,
+  \emph{Controllable multi-interest framework for recommendation}, Proceedings
+  of the 26th ACM SIGKDD International Conference on Knowledge Discovery and
+  Data Mining (2020).
+
+\bibitem[Jar19]{BIAS}
+Greg Jarboe, \emph{Understanding biases in search and recommender systems},
+  2019.
+
+\bibitem[KB19]{BRIDGE}
+Mesut Kaya and Derek Bridge, \emph{A comparison of calibrated and intent-aware
+  recommendations}, Proceedings of the 13th ACM Conference on Recommender
+  Systems (New York, NY, USA), RecSys '19, Association for Computing Machinery,
+  2019, p.~151–159.
+
+\bibitem[LDS18]{GAN}
+Yichao Lu, Ruihai Dong, and Barry Smyth, \emph{Why i like it: Multi-task
+  learning for recommendation and explanation}, Proceedings of the 12th ACM
+  Conference on Recommender Systems (New York, NY, USA), RecSys '18,
+  Association for Computing Machinery, 2018, p.~4–12.
+
+\bibitem[MLH{\etalchar{+}}18]{EX3}
+James McInerney, Benjamin Lacker, Samantha Hansen, Karl Higley, Hugues
+  Bouchard, Alois Gruson, and Rishabh Mehrotra, \emph{Explore, exploit, and
+  explain: Personalizing explainable recommendations with bandits}, Proceedings
+  of the 12th ACM Conference on Recommender Systems (New York, NY, USA), RecSys
+  '18, Association for Computing Machinery, 2018, p.~31–39.
+
+\bibitem[SSS{\etalchar{+}}16]{TREATMENTS}
+Tobias Schnabel, Adith Swaminathan, Ashudeep Singh, Navin Chandak, and Thorsten
+  Joachims, \emph{Recommendations as treatments: Debiasing learning and
+  evaluation}, Proceedings of the 33rd International Conference on
+  International Conference on Machine Learning - Volume 48, ICML'16, JMLR.org,
+  2016, p.~1670–1679.
+
+\bibitem[WLCB18]{DECONF}
+Yixin Wang, Dawen Liang, Laurent Charlin, and David~M. Blei, \emph{The
+  deconfounded recommender: A causal inference approach to recommendation},
+  ArXiv \textbf{abs/1808.06581} (2018).
+
+\end{thebibliography}
