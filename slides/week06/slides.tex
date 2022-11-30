@@ -1,4 +1,4 @@
-\documentclass[handout,11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \usetheme{Singapore}
 \usecolortheme{orchid}
@@ -66,6 +66,11 @@
 \item Смещение между распределениями на обучении и применении
 \item {\color{blue} Не учитывается долгострочный эффект рекомендаций}
 \end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.4]{images/profit.jpeg}
+\end{center}
+
 \end{frame}
 
 \section{Долгосрочный эффект рекомендаций}
@@ -220,7 +225,7 @@ A_n = \arg \max_a \left( Q_n(a) + c \sqrt{\frac{\log(n)}{N_n(a)}} \right)
 
 \begin{frame}{Варианты решений II: Gradient Bandit \cite{BANDITS2}}
 
-Политика, которая чаще выбирает "хорошие" руки
+Политика, которая чаще выбирает ``хорошие'' руки
 
 $H(A_k)$ -- value руки $k$
 \[

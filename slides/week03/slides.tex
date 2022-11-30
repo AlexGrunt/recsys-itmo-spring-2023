@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \usetheme{Singapore}
 \usecolortheme{orchid}
@@ -59,9 +59,27 @@
 \end{frame}
 
 \begin{frame}
+
+\begin{columns}
+
+\begin{column}{0.47\textwidth} 
+
 \begin{center}
 \includegraphics[scale=0.22]{images/taxonomy.png}
 \end{center}
+
+\end{column}
+
+\begin{column}{0.47\textwidth} 
+
+\begin{center}
+\includegraphics[scale=0.2]{images/karlson.png}
+\end{center}
+
+\end{column}
+
+\end{columns}
+
 \end{frame}
 
 \section{Content-based RS}
@@ -183,8 +201,7 @@ recommendations = \arg_i topk \, p(u \, likes \, i)
   Примеры моделей:
   \begin{itemize}
   \item Naive Bayes
-  \item Rocchio
-  \item Meta-learning
+  \item Любой классификатор
   \end{itemize}
     
 \end{column}
@@ -403,6 +420,20 @@ The general idea of LSH is to use a family of functions (“LSH families”) to 
 
 \end{frame}
 
+\begin{frame}{На Spark}
+
+Bucketed Random Projection for Euclidean Distance
+
+\url{https://spark.apache.org/docs/2.2.3/ml-features.html\#bucketed-random-projection-for-euclidean-distance}
+
+\vfill
+
+MinHash for Jaccard Distance
+
+\url{https://spark.apache.org/docs/2.2.3/ml-features.html\#minhash-for-jaccard-distance}
+
+\end{frame}
+
 \begin{frame}{Пример: формально}
 
 \begin{center}
@@ -443,6 +474,12 @@ r(TW) = \, ? \quad r(SW1) = \, ?
   \end{itemize}
 \end{tcolorbox}
 
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.8]{images/bye.jpeg}
+\end{center}
 \end{frame}
 
 \section{Model-based Collaborative Filtering}
@@ -687,6 +724,21 @@ GPU & & & \checked \\
 
 \end{frame}
 
+\begin{frame}{Простые автоэнкодеры}
+
+SLIM \cite{SLIM} / EASE \cite{EASE}
+\[
+\hat A = A W,
+\]
+где
+\begin{itemize}
+\item $A$ -- матрица интеракций
+\item $\hat A$ -- предсказанные интеракции
+\item $W_{:,j}$ -- колонка весов агрегации для  $j$ айтема ($W_{ij} \geq 0$ (SLIM), $W_{jj} = 0$).
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}{}
 
 \begin{tcolorbox}[colback=info!5,colframe=info!80,title=Плюсы]
@@ -742,7 +794,7 @@ GPU & & & \checked \\
 
 \begin{column}{0.47\textwidth} 
 \begin{center}
-\includegraphics[scale=0.3]{images/relationships.png}
+\includegraphics[scale=0.18]{images/relationships.png}
 \end{center}
 \end{column}
 

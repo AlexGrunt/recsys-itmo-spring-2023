@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \usetheme{Singapore}
 \usecolortheme{orchid}
@@ -35,6 +35,13 @@
   \end{frame}
 }
 
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+
 \begin{document}
 
 {
@@ -44,14 +51,11 @@
 \titlepage
 \end{frame}
 
-}
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
 
-\begin{frame}{}
-Входной опрос: \url{https://tinyurl.com/yu4ytbfd}
-\begin{center}
-\includegraphics[scale=0.35]{images/overall.png}
-\end{center}
-\end{frame}
+}
 
 \section{Архитектуры рекомендательных сервисов}
 
@@ -81,6 +85,12 @@
 
 \end{frame}
 
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.15]{images/mendeley-recs.jpeg}
+\end{center}
+\end{frame}
+
 \begin{frame}{Обработка данных под высокой нагрузкой / Netflix (2013) \cite{NFLX}}
 
 \begin{columns}
@@ -102,6 +112,13 @@
 \href{https://cassandra.apache.org/_/index.html}{Cassandra}
 }
 
+\end{frame}
+
+\begin{frame}
+
+\begin{center}
+\includegraphics[scale=0.27]{images/netflix-6.png}
+\end{center}
 
 \end{frame}
 
@@ -184,7 +201,7 @@ p(x) = \frac{C} {x^{\alpha}}, \quad x > x_{min}
 \begin{column}{0.35\textwidth}
     \begin{small}
     \begin{tcolorbox}[colback=info!5,colframe=info!80,title=]
-    Потребности людей нельзя упаковать в удобную метрику. Кроме машинного обучения  в рекомендательных сервисах приходится исполтзовать пре- и пост-процессинг, чтобы гарантировать business-value.
+    Потребности людей нельзя упаковать в удобную метрику. Кроме машинного обучения  в рекомендательных сервисах приходится использовать пре- и пост-процессинг, чтобы гарантировать business-value.
     \end{tcolorbox}
     \end{small}
 \end{column}
@@ -278,6 +295,24 @@ p(x) = \frac{C} {x^{\alpha}}, \quad x > x_{min}
 
 \end{frame}
 
+\begin{frame}{Randomized Controlled Experiment}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Предположение 1: ]
+Можно оценить значение некоторой характеристики для всей популяции, имея выборку из этой популяции.
+\end{tcolorbox}
+
+\vfill
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Предположение 2: Stable Unit Treatment Value Assumption]
+Эффект для каждого пользователя зависят только от свойств этого пользователя, но не свойств и исходов других пользователей.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=info!5,colframe=info!80,title=Схема эксперимента]
+Все доступные пользователи независимо друг от друга случайным образом распределяются в control либо treatment с одинаковой вероятностью
+\end{tcolorbox}
+
+\end{frame}
+
 \begin{frame}{Фреймворк Potential Outcomes}
 
 Воздействие на $i$ пользователя:
@@ -298,28 +333,6 @@ y_i^0 \text{ и } y_i^1
 \[
 ATE = E \left[ y_i^1 - y_i^0 \right]
 \]
-\end{tcolorbox}
-
-\end{frame}
-
-\begin{frame}{Randomized Controlled Experiment}
-
-\begin{tcolorbox}[colback=info!5,colframe=info!80,title=Схема эксперимента]
-Все доступные пользователи независимо друг от друга случайным образом распределяются в control либо treatment с одинаковой вероятностью
-\end{tcolorbox}
-
-\end{frame}
-
-\begin{frame}{\phantom{Предположения RCE}}
-
-\begin{tcolorbox}[colback=warn!5,colframe=warn!80,title=Предположение 1: ]
-Можно оценить значение некоторой характеристики для всей популяции, имея выборку из этой популяции.
-\end{tcolorbox}
-
-\vfill
-
-\begin{tcolorbox}[colback=warn!5,colframe=warn!80,title=Предположение 2: Stable Unit Treatment Value Assumption]
-Потенциальные исходы для каждого пользователя зависят только от свойств этого пользователя, но не свойств и исходов других пользователей.
 \end{tcolorbox}
 
 \end{frame}
@@ -393,6 +406,20 @@ r = \frac{ \left( \frac{s_1^2}{n_1} + \frac{s_0^2}{n_0} \right)^2 }{ \frac{s_1^4
 
 \end{frame}
 
+\begin{frame}{Сложности RCE в индустриальных рекомендерах \cite{FACEBOOK}}
+
+\begin{itemize}[<+->]
+\item Как выбрать Самую Главную Метрику (OEC)? 
+\item Как оценить долгосрочный эффект?
+\item Разный эффект на разных сегментах пользователей
+\item Отсутствие культуры экспериментирования
+\item Масштабирование платформы для экспериментов
+\item Сетевые эффекты
+\item Наложение эффектов от экспериментов
+\end{itemize}
+
+\end{frame}
+
 \section{Итоги}
 
 \begin{frame}
@@ -407,11 +434,15 @@ A/B эксперимент -- надежный способ оценки эфф�
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Литература}
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.5]{images/thanks.png}
+\end{center}
+\end{frame}
 
+\begin{frame}[allowframebreaks]{Литература}
 \bibliographystyle{amsalpha}
 \bibliography{references.bib}
-
 \end{frame}
 
 \end{document}

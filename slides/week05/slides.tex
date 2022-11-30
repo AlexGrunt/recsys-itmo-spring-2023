@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \usetheme{Singapore}
 \usecolortheme{orchid}
@@ -61,25 +61,21 @@
 \begin{frame}{Что мы уже умеем}
 
 \begin{columns}
-
-\begin{column}{0.2\textwidth}
-
-\end{column}
-
-\begin{column}{0.5\textwidth} 
-
+\begin{column}{0.55\textwidth}
+\begin{center}
 \begin{tcolorbox}[colback=info!5,colframe=info!80,title=]
-\begin{Large}
+\begin{large}
 \[
 \hat r_{ui} = f_{\theta}(x_u, x_i, x_c)
 \]
-\end{Large}
-\end{tcolorbox}
-
+\end{large}
+\end{tcolorbox}\end{center}
 \end{column}
 
-\begin{column}{0.2\textwidth} 
-
+\begin{column}{0.35\textwidth} 
+\begin{center}
+\includegraphics[scale=0.4]{images/simple.jpeg}
+\end{center}
 \end{column}
 \end{columns}
 
@@ -239,7 +235,6 @@ Managing Diversity in Airbnb Search \cite{AIRBNB}
 \item Убеждение: мотивировать пользователя к покупке
 \item Полезность: помочь пользователю принять правильное решение
 \item Эффективность: помочь пользователю принять решение быстро
-\item Удовольствие: сделать приятно пользователю
 \end{enumerate}
 
 \end{frame}
@@ -461,6 +456,12 @@ E_D [R_{IPS}(\hat Y | P)] = \frac{1}{U I} \sum_u \sum_i E_D\left[ \frac{\delta_{
 При построении моделей мы делаем упрощающие предположения. Из-за этих предположений в продакшен системах могут возникать негативные эффекты. Эти эффекты нужно учитывать и пытаться исправить.
 \end{tcolorbox}
 
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.55]{images/bye.jpeg}
+\end{center}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Литература}

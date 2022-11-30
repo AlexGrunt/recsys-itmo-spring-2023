@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \usetheme{Singapore}
 \usecolortheme{orchid}
@@ -80,6 +80,18 @@
 
 \end{frame}
 
+\begin{frame}{}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Миссия компании]
+Дать пользователям возможность быть ближе к семье и друзьям
+\end{tcolorbox}
+
+\begin{center}
+\includegraphics[scale=0.14]{images/odnoklassniki.jpeg}
+\end{center}
+
+\end{frame}
+
 \begin{frame}{A/B эксперимент \cite{RSHB}}
 
 \begin{columns}
@@ -102,18 +114,6 @@
     \end{tcolorbox}
 \end{column}
 \end{columns}
-
-\end{frame}
-
-\begin{frame}{}
-
-\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Миссия компании КнигаЛиц]
-Helping users feel closer to their friends and family.
-\end{tcolorbox}
-
-\vfill
-
-Q: Какую метрику вы бы предложили измерять в A/B?
 
 \end{frame}
 
@@ -168,37 +168,9 @@ Q: Какую метрику вы бы предложили измерять в 
 
 \section{Офлайн эксперимент}
 
-\begin{frame}{Зачем улучшать RS}
+\begin{frame}{Какие бывают метрики}
 
-\begin{footnotesize}
-
-бизнесу
-\begin{itemize}
-\item Увеличить продажи
-\item Продвигать более разнообразные айтемы
-\item Улучшить пользовательский опыт
-\item Добиться большей лояльности
-\item Лучше понимать пользователей
-\end{itemize}
-
-пользователям
-\begin{itemize}
-\item Найти лучший товар
-\item Найти {\bf все} подходящие товары
-\item Найти последовательность или набор товаров
-\item Залипнуть
-\item Найти рекомендер, которому можно доверять
-\item Реализовать творческие потребности
-\item Помочь другим сделать выбор
-\end{itemize}
-
-\end{footnotesize}
-
-\end{frame}
-
-\begin{frame}{}
-
-\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Бизнесовая метрика]
+\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Бизнесовая]
 напрямую интересует бизнес
 \begin{itemize}
   \item сложно оптимизировать
@@ -207,7 +179,7 @@ Q: Какую метрику вы бы предложили измерять в 
  \end{itemize}
 \end{tcolorbox}
 \vfill
-\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Техническая метрика]
+\begin{tcolorbox}[colback=gray!5,colframe=gray!80,title=Техническая]
 отражает один аспект системы
 \begin{itemize}
   \item можно оптимизировать
@@ -239,16 +211,9 @@ Q: Какую метрику вы бы предложили измерять в 
 
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Как сформировать тестовую выборку}
 
-\begin{tcolorbox}[colback=info!5,colframe=info!80,title=]
-При офлайн оценке нужно стремиться к тому, чтобы данные были максимально похожи на реальность
-\end{tcolorbox}
-
-\vfill
-
-Техники выбора данных для офлайн оценки
-\begin{itemize} %[<+->]
+\begin{itemize} [<+->]
 \item Семплировать случайные пары user-item
 \item Семплировать случайные item у каждого пользователя 
 \item Семплировать тестовых пользователей
@@ -426,16 +391,6 @@ RMSE, MAE, accuracy, precision, recall, auc, ...
 
 \end{frame}
 
-\begin{frame}{Гайд по выбору метрик Николая Анохина}
-
-\begin{enumerate}
-\item Находим метрики релевантности, которые подходят к задаче
-\item Выбираем в качестве основной самую интерпретируемую
-\item Усложняем метрику, если оказалось, что она не отражает реальность
-\end{enumerate}
-
-\end{frame}
-
 \section{Покрытие}
 
 \begin{frame}{Item space coverage}
@@ -502,7 +457,7 @@ With 1\% precision loss, percentage of rec. long-tail items increases from 16 to
 \end{frame}
 
 \begin{frame}
-Maximal Marginal Relevence \cite{CARBONELL}
+Maximal Marginal Relevance \cite{CARBONELL}
 \[
 MMR = \max_j \left[ \lambda \, similarity(j, U) + (1 - \lambda) \max_{k < j} similarity(k, j) \right]
 \]
@@ -564,37 +519,13 @@ unexp(u, i) = \max_{j \in I_u} \left( -nPMI(i, j) \right)
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Гайд по выбору метрик Николая Анохина}
 
-\begin{footnotesize}
-
-\begin{center}
-
-\begin{tabular}{l c c c c c}
-Цель & rel & cov & div & ser & poll \\
-\hline
-{\bf Бизнесу} & & & & & \\
-\hline
-Увеличить продажи & \checked & & & \checked & \\
-Продвигать более разнообразные айтемы & & \checked & \checked & \checked & \\
-Улучшить пользовательский опыт & \checked & & \checked & \checked & \checked \\
-Добиться большей лояльности & & & & & \checked \\
-Лучше понимать пользователей & & & & & \checked \\
-\hline
-{\bf Пользователям} & & & & & \\
-\hline
-Найти лучший товар & \checked & & & \checked & \checked \\
-Найти {\bf все} подходящие товары & \checked & \checked & & & \checked \\
-Найти последовательность или набор товаров & & & \checked & & \checked \\
-Залипнуть & & & \checked & \checked & \checked \\
-Найти рекомендер, которому можно доверять & & & & & \checked \\
-Реализовать творческие потребности & & & & & \checked \\
-Помочь другим сделать выбор & & & & & \checked \\
-\end{tabular}
-
-\end{center}
-
-\end{footnotesize}
+\begin{enumerate}
+\item Находим метрики, которые подходят к задаче
+\item Выбираем в качестве основной самую интерпретируемую
+\item Усложняем метрику, если оказалось, что она не отражает реальность
+\end{enumerate}
 
 \end{frame}
 
@@ -637,6 +568,12 @@ unexp(u, i) = \max_{j \in I_u} \left( -nPMI(i, j) \right)
 Don't be a hero: не связываемся со сложными алгоритмами, пока не заведем простые бейзлайны
 \end{tcolorbox}
 
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.9]{images/zbazibo.jpeg}
+\end{center}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Литература}
