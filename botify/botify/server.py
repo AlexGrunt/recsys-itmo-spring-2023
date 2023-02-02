@@ -7,6 +7,7 @@ from datetime import datetime
 from flask import Flask
 from flask_redis import Redis
 from flask_restful import Resource, Api, abort, reqparse
+from gevent.pywsgi import WSGIServer
 
 from botify.data import DataLogger, Datum
 from botify.experiment import Experiments, Treatment
@@ -107,4 +108,5 @@ api.add_resource(LastTrack, "/last/<int:user>")
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    http_server = WSGIServer(("", 5000), app)
+    http_server.serve_forever()
