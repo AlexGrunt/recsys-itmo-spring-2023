@@ -10,10 +10,7 @@ from flask_restful import Resource, Api, abort, reqparse
 
 from botify.data import DataLogger, Datum
 from botify.experiment import Experiments, Treatment
-from botify.recommenders.contextual import Contextual
-from botify.recommenders.indexed import Indexed
 from botify.recommenders.random import Random
-from botify.recommenders.sticky_artist import StickyArtist
 from botify.track import Catalog
 
 root = logging.getLogger()
@@ -64,9 +61,9 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
-        treatment = Experiments.DIVERSITY.assign(user)
+        treatment = Experiments.AA.assign(user)
         if treatment == Treatment.T1:
-            recommender = Contextual(tracks_redis.connection, catalog)
+            recommender = Random(tracks_redis.connection)
         else:
             recommender = Random(tracks_redis.connection)
 
