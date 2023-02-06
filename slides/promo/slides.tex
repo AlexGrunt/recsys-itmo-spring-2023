@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \usetheme{Singapore}
 \usecolortheme{orchid}
@@ -75,9 +75,9 @@
 
 \end{frame}
 
-\begin{frame}{Telegram}
+\begin{frame}{Чат в VK}
 
-Чат курса: \url{https://t.me/+HVcLob9aLEo2N2Ji}
+Чат курса: \url{https://vk.me/join/sGHzOsGmbqnJmoPx_714MybVWuM6ZyrBINA=}
 
 \vfill
 
@@ -138,70 +138,55 @@
 
 \end{frame}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-0.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-0.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-1.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-1.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-2.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-2.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-3.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-3.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-4.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-4.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-5.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-5.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
-\begin{frame}{}
-
-\begin{center}
-\includegraphics[scale=0.25]{images/netflix-6.png}
-\end{center}
-
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{images/netflix-6.png}}
+\begin{frame}[plain]
 \end{frame}
+}
 
 \begin{frame}{RS vs другие задачи ML \cite{NETFLIX}}
 
 \begin{itemize}[<+->]
 \item RS ориентированы на продакшен
 \item Наблюдаемые данные очень разреженные
-\item Наблюдаем разное количество данных в зависимости от популярности
-\item Отсутствующие данные -- либо ненаблюдаемые позитивные, либо негативные
 \item Отсутствующие данные -- missing not-at-random
+\item Отсутствующие данные -- либо ненаблюдаемые позитивные, либо негативные
 \item Рекомендательные сервисы живут в петле обратной связи
 \end{itemize}
 
@@ -209,27 +194,52 @@
 
 \begin{frame}{Зачем RS бизнесу}
 
-\begin{itemize}[<+->]
-\item Увеличить продажи
-\item Продвигать более разнообразные айтемы
-\item Улучшить пользовательский опыт
-\item Добиться большей лояльности
-\item Лучше понимать пользователей
-\end{itemize}
+\begin{columns}
+
+\begin{column}{0.45\textwidth}
+   \begin{small}
+    \begin{itemize}[<+->]
+	\item Увеличить продажи
+	\item Продвигать более разнообразные айтемы
+	\item Улучшить пользовательский опыт
+	\item Добиться большей лояльности
+	\item Лучше понимать пользователей
+	\end{itemize}
+    \end{small}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+   \begin{center}
+		\includegraphics[scale=0.25]{images/logos-en.png}
+   \end{center}
+\end{column}
+
+\end{columns}
 
 \end{frame}
 
 \begin{frame}{Зачем RS пользователям}
 
-\begin{itemize}[<+->]
-\item Найти лучший товар
-\item Найти {\bf все} подходящие товары
-\item Найти последовательность или набор товаров
-\item Залипнуть
-\item Найти рекомендер, которому можно доверять
-\item Реализовать творческие потребности
-\item Помочь другим сделать выбор
-\end{itemize}
+\begin{columns}
+
+\begin{column}{0.45\textwidth}
+   \begin{small}
+    \begin{itemize}[<+->]
+	\item Найти лучший товар
+	\item Найти {\bf все} подходящие товары
+	\item Найти последовательность или набор товаров
+	\item Залипнуть
+	\end{itemize}
+    \end{small}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+   \begin{center}
+		\includegraphics[scale=0.25]{images/logos-ru.png}
+   \end{center}
+\end{column}
+
+\end{columns}
 
 \end{frame}
 
@@ -252,12 +262,13 @@
 \begin{tabular}{ l | l | c | c | c }
 {\bf Дата} & {\bf Тема} & {\bf Квиз} & {\bf Семинар} & {\bf Домашка} \\
 \hline
-2022-02-14 & Рекомендательные сервисы в продакшене & \checked  & \checked &  \\
-2022-02-21 & Метрики и базовые подходы & \checked  &  \checked &  \\ 
-2022-02-28 & Классические алгоритмы & \checked  & \checked & \checked  \\
-2022-03-14 & Нейросетевые рекомендеры & \checked  & \checked &  \\
-2022-03-21 & Нерешенные проблемы и новые направления & \checked  &  \checked & \\
-2022-03-28 & Рекомендации и Reinforcement Learning & \checked  & \checked & 
+2023-02-15 & Рекомендательные сервисы в продакшене & \checked  & \checked &  \\
+2023-02-22 & Метрики и базовые подходы & \checked  &  \checked &  \\ 
+2023-03-01 & Классические алгоритмы 1 & \checked  & \checked &  \\
+2023-03-15 & Классические алгоритмы 2 & \checked  & \checked & \checked  \\
+2023-03-22 & Нейросетевые рекомендеры & \checked  & \checked &  \\
+2023-03-29 & Нерешенные проблемы и новые направления & \checked  &  \checked & \\
+2023-04-05 & Рекомендации и Reinforcement Learning & \checked  & \checked & 
 \end{tabular}
 \end{small}
 \end{frame}
@@ -279,9 +290,16 @@
 \item Сможете выбирать правильные инструменты под конкретную задачу;
 \item Узнаете о проблемах, возникающих в боевых RS, и научитесь их решать;
 \item Будете в курсе SOTA моделей и задач RS, над которыми работают ученые.
+\item Узнаете, какие специалисты участвуют в создании RS.
 \end{itemize}
 
 \end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/mle.png}}
+\begin{frame}[plain]
+\end{frame}
+}
 
 \begin{frame}[allowframebreaks]{Литература}
 \bibliographystyle{amsalpha}
