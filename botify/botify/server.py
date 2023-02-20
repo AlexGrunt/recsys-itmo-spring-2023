@@ -22,8 +22,7 @@ app.config.from_file("config.json", load=json.load)
 api = Api(app)
 
 tracks_redis = Redis(app, config_prefix="REDIS_TRACKS")
-artists_redis = Redis(app, config_prefix="REDIS_ARTIST")
-recommendations_redis = Redis(app, config_prefix="REDIS_RECOMMENDATIONS")
+# TODO Seminar 2 step 1: create a redis db for artists' tracks
 
 data_logger = DataLogger(app)
 
@@ -31,8 +30,7 @@ catalog = Catalog(app).load(
     app.config["TRACKS_CATALOG"], app.config["TOP_TRACKS_CATALOG"]
 )
 catalog.upload_tracks(tracks_redis.connection)
-catalog.upload_artists(artists_redis.connection)
-catalog.upload_recommendations(recommendations_redis.connection)
+# TODO Seminar 2 step 3: upload artists' tracks to redis
 
 parser = reqparse.RequestParser()
 parser.add_argument("track", type=int, location="json", required=True)
@@ -61,7 +59,7 @@ class NextTrack(Resource):
         start = time.time()
 
         args = parser.parse_args()
-
+        # TODO Seminar 2 step 5: create and run the A/B experiment
         treatment = Experiments.AA.assign(user)
         if treatment == Treatment.T1:
             recommender = Random(tracks_redis.connection)
