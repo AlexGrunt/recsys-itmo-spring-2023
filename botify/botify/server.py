@@ -12,7 +12,7 @@ from gevent.pywsgi import WSGIServer
 from botify.data import DataLogger, Datum
 from botify.experiment import Experiments, Treatment
 from botify.recommenders.random import Random
-from botify.recommenders.sticky_artist import StickyArtist
+from botify.recommenders.toppop import TopPop
 from botify.track import Catalog
 
 root = logging.getLogger()
@@ -23,7 +23,6 @@ app.config.from_file("config.json", load=json.load)
 api = Api(app)
 
 tracks_redis = Redis(app, config_prefix="REDIS_TRACKS")
-# TODO Seminar 2 step 1: create a redis db for artists' tracks
 artists_redis = Redis(app, config_prefix="REDIS_ARTIST")
 
 data_logger = DataLogger(app)
@@ -32,7 +31,6 @@ catalog = Catalog(app).load(
     app.config["TRACKS_CATALOG"], app.config["TOP_TRACKS_CATALOG"]
 )
 catalog.upload_tracks(tracks_redis.connection)
-# TODO Seminar 2 step 3: upload artists' tracks to redis
 catalog.upload_artists(artists_redis.connection)
 
 parser = reqparse.RequestParser()
@@ -62,10 +60,11 @@ class NextTrack(Resource):
         start = time.time()
 
         args = parser.parse_args()
-        # TODO Seminar 2 step 5: create and run the A/B experiment
-        treatment = Experiments.STICKY_ARTIST.assign(user)
+
+        # TODO: Wire TopPop recommender with 3 treatments: top-10, top-100, top-1000
+        treatment = Experiments.AA.assign(user)
         if treatment == Treatment.T1:
-            recommender = StickyArtist(tracks_redis.connection, artists_redis.connection, catalog)
+            recommender = Random(tracks_redis.connection)
         else:
             recommender = Random(tracks_redis.connection)
 
