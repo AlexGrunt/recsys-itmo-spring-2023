@@ -61,10 +61,13 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
-        # TODO: Wire TopPop recommender with 3 treatments: top-10, top-100, top-1000
-        treatment = Experiments.AA.assign(user)
+        treatment = Experiments.TOP_POP.assign(user)
         if treatment == Treatment.T1:
-            recommender = Random(tracks_redis.connection)
+            recommender = TopPop(tracks_redis.connection, catalog.top_tracks[:10])
+        elif treatment == Treatment.T2:
+            recommender = TopPop(tracks_redis.connection, catalog.top_tracks[:100])
+        elif treatment == Treatment.T3:
+            recommender = TopPop(tracks_redis.connection, catalog.top_tracks[:1000])
         else:
             recommender = Random(tracks_redis.connection)
 
