@@ -58,4 +58,4 @@ class Experiments:
     TOP_POP = Experiment("TOP_POP", Split.FOUR_WAY)
 
     def __init__(self):
-        self.experiments = [Experiments.TOP_POP]
+        self.experiments = [Experiments.AA]

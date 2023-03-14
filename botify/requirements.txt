@@ -4,3 +4,4 @@ Flask-And-Redis==1.0.0
 python-json-logger==2.0.2
 mmh3==3.0.0
 gevent
+scikit-learn

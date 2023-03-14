@@ -11,8 +11,8 @@ from gevent.pywsgi import WSGIServer
 
 from botify.data import DataLogger, Datum
 from botify.experiment import Experiments, Treatment
+from botify.recommenders.indexed import Indexed
 from botify.recommenders.random import Random
-from botify.recommenders.toppop import TopPop
 from botify.track import Catalog
 
 root = logging.getLogger()
@@ -24,6 +24,7 @@ api = Api(app)
 
 tracks_redis = Redis(app, config_prefix="REDIS_TRACKS")
 artists_redis = Redis(app, config_prefix="REDIS_ARTIST")
+recommendations_redis = Redis(app, config_prefix="REDIS_RECOMMENDATIONS")
 
 data_logger = DataLogger(app)
 
@@ -32,6 +33,7 @@ catalog = Catalog(app).load(
 )
 catalog.upload_tracks(tracks_redis.connection)
 catalog.upload_artists(artists_redis.connection)
+catalog.upload_recommendations(recommendations_redis.connection)
 
 parser = reqparse.RequestParser()
 parser.add_argument("track", type=int, location="json", required=True)
@@ -61,13 +63,10 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
-        treatment = Experiments.TOP_POP.assign(user)
+        # TODO: Create and wire USER_BASED experiment.
+        treatment = Experiments.AA.assign(user)
         if treatment == Treatment.T1:
-            recommender = TopPop(tracks_redis.connection, catalog.top_tracks[:10])
-        elif treatment == Treatment.T2:
-            recommender = TopPop(tracks_redis.connection, catalog.top_tracks[:100])
-        elif treatment == Treatment.T3:
-            recommender = TopPop(tracks_redis.connection, catalog.top_tracks[:1000])
+            recommender = Indexed(tracks_redis, recommendations_redis, catalog)
         else:
             recommender = Random(tracks_redis.connection)
 
