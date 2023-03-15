@@ -63,8 +63,7 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
-        # TODO: Create and wire USER_BASED experiment.
-        treatment = Experiments.AA.assign(user)
+        treatment = Experiments.USER_BASED.assign(user)
         if treatment == Treatment.T1:
             recommender = Indexed(tracks_redis, recommendations_redis, catalog)
         else:
