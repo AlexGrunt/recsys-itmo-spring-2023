@@ -65,8 +65,8 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
-        # treatment = Experiments.AA.assign(user)
-        if np.random.random() < 0.9:
+        treatment = Experiments.PERSONALIZED.assign(user)
+        if treatment == Treatment.T1:
             recommender = Indexed(tracks_redis, recommendations_redis, catalog)
         else:
             recommender = Random(tracks_redis.connection)
