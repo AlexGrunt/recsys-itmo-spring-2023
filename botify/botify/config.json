@@ -10,7 +10,7 @@
   "REDIS_RECOMMENDATIONS_DB": 2,
   "TRACKS_CATALOG": "./data/recommendations_20_5.json",
   "TOP_TRACKS_CATALOG": "./data/top_tracks.json",
-  "RECOMMENDATIONS_FILE_PATH": "./data/recommendations_ub.json",
+  "RECOMMENDATIONS_FILE_PATH": "./data/recommendations.json",
   "DATA_LOG_FILE": "./log/data.json",
   "DATA_LOG_FILE_MAX_BYTES": 104857600,
   "DATA_LOG_FILE_BACKUP_COPIES": 10

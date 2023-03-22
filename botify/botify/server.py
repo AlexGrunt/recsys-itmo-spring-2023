@@ -15,6 +15,8 @@ from botify.recommenders.indexed import Indexed
 from botify.recommenders.random import Random
 from botify.track import Catalog
 
+import numpy as np
+
 root = logging.getLogger()
 root.setLevel("INFO")
 
@@ -63,8 +65,8 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
-        treatment = Experiments.USER_BASED.assign(user)
-        if treatment == Treatment.T1:
+        # treatment = Experiments.AA.assign(user)
+        if np.random.random() < 0.9:
             recommender = Indexed(tracks_redis, recommendations_redis, catalog)
         else:
             recommender = Random(tracks_redis.connection)
