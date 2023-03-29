@@ -65,6 +65,7 @@ class NextTrack(Resource):
 
         args = parser.parse_args()
 
+        # TODO Seminar 5 step 3: Wire CONTEXTUAL A/B experiment
         treatment = Experiments.PERSONALIZED.assign(user)
         if treatment == Treatment.T1:
             recommender = Indexed(tracks_redis, recommendations_redis, catalog)
