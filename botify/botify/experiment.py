@@ -60,6 +60,7 @@ class Experiments:
     TOP_POP = Experiment("TOP_POP", Split.FOUR_WAY)
     USER_BASED = Experiment("USER_BASED", Split.HALF_HALF)
     PERSONALIZED = Experiment("PERSONALIZED", Split.HALF_HALF)
+    CONTEXTUAL = Experiment("CONTEXTUAL", Split.HALF_HALF)
 
     def __init__(self):
-        self.experiments = [Experiments.PERSONALIZED]
+        self.experiments = [Experiments.CONTEXTUAL]
