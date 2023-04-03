@@ -23,8 +23,10 @@ class Catalog:
         self.app = app
         self.tracks = []
         self.top_tracks = []
+        self.tracks_with_diverse_recs = []
 
-    def load(self, catalog_path, top_tracks_path):
+    # TODO Seminar 6 step 1: Configure reading tracks with diverse recommendations
+    def load(self, catalog_path, top_tracks_path, tracks_with_diverse_recs_path):
         self.app.logger.info(f"Loading tracks from {catalog_path}")
         with open(catalog_path) as catalog_file:
             for j, line in enumerate(catalog_file):
@@ -44,13 +46,25 @@ class Catalog:
             self.top_tracks = json.load(top_tracks_path_file)
         self.app.logger.info(f"Loaded top tracks {self.top_tracks[:3]} ...")
 
+        self.app.logger.info(f"Loading tracks with diverse recommendations from {tracks_with_diverse_recs_path}")
+
+        # your code is here
+
+        self.app.logger.info(f"Loaded {j + 1} tracks with diverse recs")
+
         return self
 
-    def upload_tracks(self, redis):
+    # TODO Seminar 6 step 2: Configure uploading tracks with diverse recommendations to redis DB
+    def upload_tracks(self, redis_tracks, redis_tracks_with_diverse_recs):
         self.app.logger.info(f"Uploading tracks to redis")
         for track in self.tracks:
-            redis.set(track.track, self.to_bytes(track))
-        self.app.logger.info(f"Uploaded {len(self.tracks)} tracks")
+            redis_tracks.set(track.track, self.to_bytes(track))
+
+            # your code is here
+
+        self.app.logger.info(
+            f"Uploaded {len(self.tracks)} tracks, {len(self.tracks_with_diverse_recs)} tracks with diverse recs"
+        )
 
     def upload_artists(self, redis):
         self.app.logger.info(f"Uploading artists to redis")
@@ -62,8 +76,8 @@ class Catalog:
             redis.set(artist, self.to_bytes(artist_tracks))
         self.app.logger.info(f"Uploaded {j + 1} artists")
 
-    def upload_recommendations(self, redis):
-        recommendations_file_path = self.app.config["RECOMMENDATIONS_FILE_PATH"]
+    def upload_recommendations(self, redis, recommendations_path="RECOMMENDATIONS_FILE_PATH"):
+        recommendations_file_path = self.app.config[recommendations_path]
 
         self.app.logger.info(
             f"Uploading recommendations to redis from {recommendations_file_path}"
