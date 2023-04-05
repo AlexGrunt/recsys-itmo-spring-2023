@@ -17,7 +17,7 @@
 \usepackage{hyperref}
 
 \definecolor{info}{RGB}{62, 180, 137}
-\definecolor{warn}{RGB}{128, 0, 0}
+\definecolor{warn}{RGB}{1, 0, 0}
 
 \author{Николай Анохин}
 \title{Нерешенные проблемы и новые направления}
@@ -313,10 +313,28 @@ r(j, e, x) = \sigma(\theta_{global} + \theta_{j} \times 1_j + \theta_e \times 1_
 
 \end{frame}
 
-\begin{frame}{Why I like it: Multi-task Learning for Recommendation and Explanation \cite{GAN}}
+\begin{frame}{Recommendation as Language Processing (RLP): A Unified Pretrain, Personalized Prompt and Predict Paradigm (P5) \cite{P5}}
+
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{center}
+\includegraphics[scale=0.15]{images/p5-tasks.png}
+\end{center}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[scale=0.15]{images/p5-idea.png}
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Recommendation as Language Processing (RLP): A Unified Pretrain, Personalized Prompt and Predict Paradigm (P5) \cite{P5}}
 
 \begin{center}
-\includegraphics[scale=0.4]{images/gan.png}
+\includegraphics[scale=0.25]{images/p5-arch.png}
 \end{center}
 
 \end{frame}
