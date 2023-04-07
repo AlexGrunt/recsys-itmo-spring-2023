@@ -48,7 +48,17 @@ class Catalog:
 
         self.app.logger.info(f"Loading tracks with diverse recommendations from {tracks_with_diverse_recs_path}")
 
-        # your code is here
+        with open(tracks_with_diverse_recs_path) as tracks_with_diverse_recs_file:
+            for j, line in enumerate(tracks_with_diverse_recs_file):
+                data = json.loads(line)
+                self.tracks_with_diverse_recs.append(
+                    Track(
+                        data["track"],
+                        data["artist"],
+                        data["title"],
+                        data.get("recommendations", []),
+                    )
+                )
 
         self.app.logger.info(f"Loaded {j + 1} tracks with diverse recs")
 
@@ -60,7 +70,8 @@ class Catalog:
         for track in self.tracks:
             redis_tracks.set(track.track, self.to_bytes(track))
 
-            # your code is here
+        for track in self.tracks_with_diverse_recs:
+            redis_tracks_with_diverse_recs.set(track.track, self.to_bytes(track))
 
         self.app.logger.info(
             f"Uploaded {len(self.tracks)} tracks, {len(self.tracks_with_diverse_recs)} tracks with diverse recs"
