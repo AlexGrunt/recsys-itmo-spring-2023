@@ -15,10 +15,12 @@
   "REDIS_TRACKS_WITH_DIVERSE_RECS_PORT": 6379,
   "REDIS_TRACKS_WITH_DIVERSE_RECS_DB": 4,
   "TRACKS_CATALOG": "./data/tracks_with_recs.json",
+  "TRACKS_CATALOG_MF": "./data/tracks_with_recs_mf.json",
   "TOP_TRACKS_CATALOG": "./data/top_tracks.json",
   "TRACKS_WITH_DIVERSE_RECS_CATALOG": "./data/recommendations_20_5.json",
   "RECOMMENDATIONS_UB_FILE_PATH": "./data/recommendations_ub.json",
   "RECOMMENDATIONS_FILE_PATH": "./data/recommendations.json",
+  "REDIS_RECOMMENDATIONS_MF_FILE_PATH": "./data/recommendations_mf.json",
   "DATA_LOG_FILE": "./log/data.json",
   "DATA_LOG_FILE_MAX_BYTES": 104857600,
   "DATA_LOG_FILE_BACKUP_COPIES": 10
